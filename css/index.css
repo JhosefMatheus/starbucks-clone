@@ -2,11 +2,14 @@
     --green: #00754a;
     --black: #000;
     --white: #fff;
-    --hover-black: rgba(0, 0, 0, .7);
-    --hover-white: rgba(0, 0, 0, .06);
     --light-green: #d4e9e2;
     --black-green: #1e3932;
     --strong-green: #006241;
+    --light-gray: rgba(0, 0, 0, .58);
+    --hover-black: rgba(0, 0, 0, .7);
+    --hover-white: rgba(0, 0, 0, .06);
+    --hover-hsla-white: hsla(0,0%,100%,.12);
+    --hover-light-gray: rgba(0, 0, 0, 0.87);
 }
 
 body, html {
@@ -19,48 +22,52 @@ body {
     font-family: SoDoSans,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
-nav {
+header {
+    width: 100%;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%), 0 0 2px rgb(0 0 0 / 7%);
+}
+
+header > nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%), 0 0 2px rgb(0 0 0 / 7%);
 }
 
-nav > .left-options {
+header > nav > .left-options {
     display: flex;
     padding: 25px;
 }
 
-nav > .left-options > .starbucks-logo {
+header > nav > .left-options > .starbucks-logo {
     width: 51px;
     height: 51px;
 }
 
-nav > .left-options > ul > li {
+header > nav > .left-options > ul > li {
     display: inline;
     padding: 10px;
 }
 
-nav > .left-options > ul > li > a {
+header > nav > .left-options > ul > li > a {
     text-decoration: none;
     color: var(--black);
     font-size: 16px;
     font-weight: 700;
 }
 
-nav > .left-options > ul > li > a:hover {
+header > nav > .left-options > ul > li > a:hover {
     color: var(--green);
 }
 
-nav > .right-options {
+header > nav > .right-options {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 25px;
 }
 
-nav > .right-options > .map-button {
+header > nav > .right-options > .map-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,12 +78,12 @@ nav > .right-options > .map-button {
     margin-right: 35px;
 }
 
-nav > .right-options > .map-button > svg {
+header > nav > .right-options > .map-button > svg {
     width: 24px;
     margin-right: 10px;
 }
 
-nav > .right-options > .map-button:hover {
+header > nav > .right-options > .map-button:hover {
     color: var(--green);
 }
 
@@ -93,7 +100,7 @@ nav > .right-options > .map-button:hover {
     background-color: var(--hover-white);
 }
 
-nav > .right-options > #sign-button {
+header > nav > .right-options > #sign-button {
     font-size: 14px;
     margin-right: 20px;
 }
@@ -111,7 +118,7 @@ nav > .right-options > #sign-button {
     background-color: var(--hover-black);
 }
 
-nav > .right-options > #join-button {
+header > nav > .right-options > #join-button {
     font-size: 14px;
 }
 
@@ -124,9 +131,12 @@ nav > .right-options > #join-button {
     font-weight: 600;
 }
 
+.white-transparent-button:hover {
+    background-color: var(--hover-hsla-white);
+}
+
 .content {
     width: 100%;
-    height: 100%;
 }
 
 .content > .card, .content > .reverse-card {
@@ -139,6 +149,14 @@ nav > .right-options > #join-button {
 
 .content > .reverse-card {
     flex-direction: row-reverse;
+}
+
+.light-green-background {
+    background-color: var(--light-green);
+}
+
+.strong-green-background {
+    background-color: var(--strong-green);
 }
 
 .content > .card > img, .content > .reverse-card > img {
@@ -167,6 +185,8 @@ nav > .right-options > #join-button {
     text-align: center;
     font-size: 19px;
     color: var(--black-green);
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .strong-green-description {
@@ -189,4 +209,106 @@ nav > .right-options > #join-button {
     text-align: center;
     font-size: 19px;
     color: var(--white);
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.content-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.observation {
+    text-align: center;
+    max-width: 600px;
+    font-size: 14px;
+    color: var(--black);
+}
+
+footer {
+    width: 100%;
+    box-shadow: 0 -1px 3px rgb(0 0 0 / 10%), 0 -2px 2px rgb(0 0 0 / 6%), 0 0 2px rgb(0 0 0 / 7%);
+}
+
+footer > nav {
+    width: 100%;
+}
+
+footer > nav > .up-options {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+footer > nav > .up-options > .options > p {
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 50px;
+}
+
+footer > nav > .up-options > .options > ul {
+    list-style-type: none;
+}
+
+footer > nav > .up-options > .options > ul > li {
+    padding: 10px;
+    max-width: 175px;
+}
+
+footer > nav > .up-options > .options > ul > li > a {
+    text-decoration: none;
+    color: var(--light-gray);
+    font-weight: 400;
+}
+
+footer > nav > .up-options > .options > ul > li > a:hover {
+    color: var(--hover-light-gray);
+}
+
+footer > nav > hr {
+    border: 1px solid rgba(204, 201, 201, 0.89);
+}
+
+footer > nav > .down-options {
+    width: 100%;
+}
+
+footer > nav > .down-options > .social-medias {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 35px;
+}
+
+footer > nav > .down-options > .social-medias > a.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+footer > nav > .down-options > .social-medias > a.social-media:hover {
+    background-color: rgba(204, 201, 201, 0.89);
+}
+
+footer > nav > .down-options > .more-info > ul > li {
+    display: inline-block;
+    padding: 20px;
+}
+
+footer > nav > .down-options > .more-info > ul > li > a {
+    text-decoration: none;
+    color: var(--hover-light-gray);
+    font-weight: 400;
+}
+
+footer > nav > .down-options > .more-info > ul > li > a:hover {
+    text-decoration: underline;
 }
